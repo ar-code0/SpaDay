@@ -1,26 +1,65 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div id="clientProfile">
-</div>
-<div id="servicesMenu">
-</div>
+﻿
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/spa/menu.css">
 
-<h1>Fancy Spa</h1>
-<div id="clientProfile">
-</div>
-<div id="servicesMenu">
+</head>
 
-    <h5>Facial Treatments</h5>
-    <p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p>
-    
+<h1>***      Fancy Spa      ***</h1>
+<div id="clientProfile">
+    <h3>Client Profile</h3>
     <ul>
-        //TODO: iterate through appropriate facial treatments
+        <li>Name: <em>@ViewBag.name</em></li>
     </ul>
-
-    <h5>Nail Services</h5>
-    // TODO: display a description for the nail service selected
-    
 </div>
+<div class="servicesMenu">
+    <h5>Facial Treatments</h5>
+    <p>Your @ViewBag.skintype skin type is best suited to the follow facial types:</p>
+
+    @if (ViewBag.manicure == "checked" || ViewBag.pedicure == "checked")
+    {
+        <ul>
+            @foreach (string type in ViewBag.appropriateFacials)
+            {
+                <li>@type</li>
+
+            }
+        </ul>
+
+        <h5>Nail Services</h5>
+        @if (ViewBag.manicure == "checked")
+        {
+            <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+
+            @if (ViewBag.pedicure == "checked")
+            {
+                <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+            }
+        }
+        else
+        {
+            @if (ViewBag.pedicure == "checked")
+            {
+                <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+            }
+        }
+        
+        <h6><em>  Available nail polishes</em></h6><br>
+        <div id="colors">
+            <ul class="inline">
+                <li class="square" id="square-1"></li>
+                <li class="square" id="square-2"></li>
+                <li class="square" id="square-3"></li>
+                <li class="square" id="square-4"></li>
+            </ul>
+            <ul class="inline">
+                <li class="square" id="square-5"></li>
+                <li class="square" id="square-6"></li>
+                <li class="square" id="square-7"></li>
+                <li class="square" id="square-8"></li>
+            </ul>
+        </div>
+    }
+</div>
+
+
+
