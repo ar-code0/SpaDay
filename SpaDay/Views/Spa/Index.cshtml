@@ -1,19 +1,19 @@
-﻿<head>
+﻿
     <link rel="stylesheet" type="text/css" href="~/css/spa/index.css">
 
-</head>
 
-<form method='post' action="spa/menu">
+
+@*<form method='post' action="spa/menu" class="form-group row">
 
     Name:
     <br>
-    <input type='text' name='name'>
+    <label><input type='text' name='name'></label>
     <br>
     <br>
 
     Skin type:
     <br>
-    <select name='skintype'>
+    <select name='skintype' class="col-form-label">
         <option value='oily'>Oily</option>
         <option value='combination'>Combination</option>
         <option value='normal'>Normal</option>
@@ -22,12 +22,39 @@
     <br>
     <br>
     <input type="checkbox" name="manicure" value="checked">
-    <label for="manicure"> Manicure</label>
+    <label class="col-form-label" for="manicure"> Manicure</label>
     <br>
     <input type="checkbox" name="pedicure" value="checked">
-    <label for="pedicure"> Pedicure</label>
+    <label class="col-form-label" for="pedicure"> Pedicure</label>
     <br>
 
-    <input id="submit" type='submit' value='Submit'>
+    <label class="col-form-label"><input id="submit" type='submit' value='Submit'></label>
+
+</form>*@
+
+<form class="text-center border border-light p-5" method='post' action="spa/menu">
+
+    <p class="h4 mb-4">Check what we have for you!!</p>
+
+    <input name='name' type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+
+    <select name='skintype' class="browser-default custom-select mb-4">
+        <option selected>Choose Skin type...</option>
+        <option value='oily'>Oily</option>
+        <option value='combination'>Combination</option>
+        <option value='normal'>Normal</option>
+        <option value='dry'>Dry</option>
+    </select>
+
+    <div class="custom-control custom-checkbox mb-4">
+        <input name="manicure" type="checkbox" value="checked" class="custom-control-input" id="defaultContactFormCopy">
+        <label class="custom-control-label" for="defaultContactFormCopy">Manicure</label>
+    </div>
+    <div class="custom-control custom-checkbox mb-4">
+        <input name="pedicure" type="checkbox" value="checked" class="custom-control-input" id="defaultContactFormCopy1">
+        <label class="custom-control-label" for="defaultContactFormCopy1">Pedicure</label>
+    </div>
+
+    <button class="btn btn-info btn-block" id="submit" type='submit' value='Submit'>Submit</button>
 
 </form>
