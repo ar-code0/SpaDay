@@ -1,27 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<form method='post'>
-    Skin type:
-    <br>    
-    <select name='skintype'>
-        <option value='oily'>Oily</option>    
-        <option value='combination'>Combination</option>    
-        <option value='normal'>Normal</option>    
-        <option value='dry'>Dry</option>    
-    </select>
-    <br>
+﻿
 
-    Manicure or Pedicure?
-    <br>    
-    <select name='manipedi'>
-        <option value='manicure'>Manicure</option>    
-        <option value='pedicure'>Pedicure</option>      
+<form class="text-center border border-light p-5" method='post' action="spa/menu">
+
+    <p class="h4 mb-4">Check what we have for you!!</p>
+
+    <select name='skintype' class="browser-default custom-select mb-4">
+        <option selected>Choose Skin type...</option>
+        <option value='oily'>Oily</option>
+        <option value='combination'>Combination</option>
+        <option value='normal'>Normal</option>
+        <option value='dry'>Dry</option>
     </select>
-    <br>
-    
-    <input type='submit' value='Submit'>    
-     
+
+    <div class="custom-control custom-checkbox mb-4">
+        <input name="manicure" type="checkbox" value="manicure" class="custom-control-input" id="defaultContactFormCopy">
+        <label class="custom-control-label" for="defaultContactFormCopy">Manicure</label>
+    </div>
+    <div class="custom-control custom-checkbox mb-4">
+        <input name="pedicure" type="checkbox" value="pedicure" class="custom-control-input" id="defaultContactFormCopy1">
+        <label class="custom-control-label" for="defaultContactFormCopy1">Pedicure</label>
+    </div>
+
+    <button class="btn btn-info btn-block" id="submit" type='submit' value='Submit'>Submit</button>
+
 </form>
