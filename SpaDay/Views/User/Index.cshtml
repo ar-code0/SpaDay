@@ -1,8 +1,14 @@
-﻿@{
-}
+﻿@using SpaDay.Models;
+@model User;
 
-<h1>Welcome to our spa, @ViewBag.user.Username!</h1>
+    <div class="card" style="width: 18rem;">
+        <h5 class="card-header bg-secondary">Welcome to your spa!!</h5>
+        <div class="card-body">
+            <p class="card-text">Name: @Model.Username</p>
+            <p class="card-text">Email: @Model.Email</p>
 
-<p>
-    <a asp-controller="Spa" asp-action="Index">Select Spa Services</a>
-</p>
+            <p>
+                <a asp-controller="Spa" asp-action="Index" class="btn btn-primary">Select Spa Services</a>
+            </p>
+        </div>
+    </div>

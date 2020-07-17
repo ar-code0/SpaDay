@@ -3,7 +3,7 @@
 *@
 @{
 }
-<h1>Fancy Spa</h1>
+@*<h1>Fancy Spa</h1>
 <div id="clientProfile">
     <h3>Client profile</h3>
 </div>
@@ -26,4 +26,44 @@
     {
         <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
     }
+</div>*@
+
+
+
+<div class="card" style="width: 30rem;">
+    <h1 class="card-header bg-danger">Fancy Spa</h1>
+    <div class="card-body">
+        <h4 class="card-text">Client profile</h4>
+    </div>
 </div>
+<br />
+<br />
+<div class="card" style="width: 30rem;">
+    <h6 class="card-header bg-info">Facial Treatments</h6>
+    <div class="card-body">
+        <p class="card-text">Your @ViewBag.client.SkinType skin type is best suited to the follow facial types:</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        @foreach (string facial in ViewBag.client.GetFacials())
+        {
+            <li class="list-group-item">@facial</li>
+        }
+    </ul>
+</div>
+<br />
+<div class="card" style="width: 30rem;">
+    <h6 class="card-header bg-info">Nail Services</h6>
+    <ul class="list-group list-group-flush">
+
+        @if (ViewBag.client.NailService == "manicure")
+        {
+            <li class="list-group-item">Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</li>
+        }
+        else
+        {
+            <li class="list-group-item">Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</li>
+        }
+    </ul>
+</div>
+
+
